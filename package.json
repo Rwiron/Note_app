@@ -1,0 +1,11 @@
+{
+  "name": "note_app",
+  "version": "1.0.0",
+  "description": "run-time environment for javascript outside a browser. when you install node it ship with NPN (Node package manager)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wiron R",
+  "license": "MIT"
+}
