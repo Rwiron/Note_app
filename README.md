@@ -8,3 +8,6 @@ run-time environment for javascript outside a browser. when you install node it 
 ## installing and Uninstalling Node Packages
 1. installing: `npm install name_of_package`
 2. uninstalling: `npm uninstall name_of_package`
+
+# dotenv (dependency)
+this is a package that helps us to be able to get values from the file .env
