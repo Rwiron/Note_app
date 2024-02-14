@@ -1,11 +1,12 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
+const helmet = require("helmet");
 const Notesrouter = require("./routes/notesRoutes");
 
 const app = express();
 
-//use of cors
+app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
@@ -14,7 +15,7 @@ app.use("/notes", Notesrouter);
 // Set routes
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "Welcome to the Notes API",
+    message: "Welcome to the Notes Projects APIs",
   });
 });
 

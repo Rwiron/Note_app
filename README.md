@@ -1,4 +1,5 @@
 # Introduction to NodeJS
+
 Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser.
 It's built on the V8 JavaScript engine,which is the same engine that powers Google Chrome.
 Node.js uses an event-driven, non-blocking I/O model,which makes
@@ -72,10 +73,18 @@ HTTP Status codes
 
 14. 503 - Service unavailable
 
-
 ## CORS (Cross-Origin Resource Sharing)
+
 type of headers that allow server to indicate any orgin (domain,shcema.port)
 
+## Export a module (file)
 
-## Export a module (file) 
 -All files in node js project are modules as they long they can be accessed outside and used
+
+## array containing object
+
+const notes = {
+id: 1,
+titles,
+content
+}
