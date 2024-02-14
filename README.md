@@ -88,3 +88,6 @@ id: 1,
 titles,
 content
 }
+
+
+## CRUD (CREATE,READ,UPDATE,DELETE)

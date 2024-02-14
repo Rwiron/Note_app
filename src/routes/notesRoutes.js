@@ -1,13 +1,15 @@
 const express = require("express");
-const router = express.Router(); //define routes and invoke it
-const { notes, addNote } = require("../utils");
+const { getNotes, getSinlgeNotes } = require("../controllers/noteControllers");
+const router = express.Router();
 
-router.get("/", (req, res) => {
-  return res.status(200).json({
-    message: "All notes",
-    data: notes, // Make sure `notes` is defined in this file
-  });
-});
+//get notes
+router.get("/", getNotes);
+
+// get one note
+router.get("/:notesId", getSinlgeNotes);
+
+// create notes
+// router.post("/create",createNotes);
 
 router.post("/", (req, res) => {
   const { title, content } = req.body;
