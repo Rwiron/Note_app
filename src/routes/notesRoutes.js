@@ -1,5 +1,12 @@
 const express = require("express");
-const { getNotes, getSinlgeNotes } = require("../controllers/noteControllers");
+const {
+  getNotes,
+  getSinlgeNotes,
+  createNote,
+  updateNote,
+  deleteNote,
+} = require("../controllers/noteControllers");
+
 const router = express.Router();
 
 //get notes
@@ -8,24 +15,14 @@ router.get("/", getNotes);
 // get one note
 router.get("/:notesId", getSinlgeNotes);
 
-// create notes
-// router.post("/create",createNotes);
+//create note
+router.post("/", createNote);
 
-router.post("/", (req, res) => {
-  const { title, content } = req.body;
+//update
+router.put("/:id", updateNote);
 
-  //aka validation gato
-  if (!title || !content) {
-    return res
-      .status(400)
-      .json({ message: "Please fill both title and content." });
-  }
-  const newNote = addNote(title, content);
-  res.status(201).json({
-    message: "Note added successfully",
-    data: newNote,
-  });
-});
+//delete
+router.delete("/:id", deleteNote);
 
 //to export routes
 module.exports = router;

@@ -89,5 +89,28 @@ titles,
 content
 }
 
+## JSON Format
 
-## CRUD (CREATE,READ,UPDATE,DELETE)
+JSON stands for JavaScript Object Notation e.g
+
+`
+{
+"name": "John Niyontwali",
+"position": "Software Developer"
+}
+
+{
+name: "John",
+position: "FS Dev"
+}
+`
+
+## Mysql2
+
+MySQL client for Node.js with focus on performance. Supports prepared statements, non-utf8 encodings, binary log protocol, compression, ssl much more.
+
+## Installation
+
+MySQL2 is free from native bindings and can be installed on Linux, Mac OS or Windows without any issues
+`npm i mysql2`
+
