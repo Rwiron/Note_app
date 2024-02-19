@@ -13,7 +13,7 @@ const router = express.Router();
 router.get("/", getNotes);
 
 // get one note
-router.get("/:notesId", getSinlgeNotes);
+router.get("/:id", getSinlgeNotes);
 
 //create note
 router.post("/", createNote);

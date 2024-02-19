@@ -5,6 +5,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const mysql = require('mysql2/promise'); 
 const NotesRouter = require('./routes/notesRoutes');
+const { sequelize } = require('./database/models');
+
 
 const app = express();
 
@@ -31,21 +33,14 @@ app.get('*', (req, res) => {
   });
 });
 
-const { PORT, HOST, DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
+const { PORT, HOST} = process.env;
 
 const connectToDatabase = async () => {
   try {
-    const connection = await mysql.createConnection({
-      host: DB_HOST,
-      user: DB_USER,
-      password: DB_PASSWORD,
-      database: DB_DATABASE,
-    });
-    console.log('Connected to MySQL database!');
-    return connection;
+    await sequelize.authenticate();
+    console.log('Db Connected Successfully');
   } catch (error) {
-    console.error('Error connecting to database:', error);
-    process.exit(1); 
+    console.log(error);
   }
 };
 
